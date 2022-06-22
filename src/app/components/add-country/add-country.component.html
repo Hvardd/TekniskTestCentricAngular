@@ -1,0 +1,39 @@
+<div class="margin">
+<form>
+  <div class="row">
+  <mat-form-field appearance="outline">
+    <mat-label>Country</mat-label>
+    <input type="text" name="Country" matInput
+    required [(ngModel)]="country.name">
+    <mat-error>Country is a required field</mat-error>
+  </mat-form-field>
+</div>
+
+   <mat-form-field appearance="outline">
+    <mat-label>Continent</mat-label>
+    <mat-select required [(ngModel)]="country.continent.name" name="Continent">
+      <mat-option *ngFor="let continent of continentList" [value]="continent.name">{{continent.name}}</mat-option>
+    </mat-select>
+    <mat-error>Continent is a required field</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="onAddCountry()">Add Country</button>
+
+
+</form>
+
+<br>
+
+
+<form>
+<mat-form-field appearance="outline">
+  <mat-label>Add new continent</mat-label>
+  <input type="text" name="addContinent" [(ngModel)]="continent.name" matInput
+  required>
+  <mat-error>Continent is a required field</mat-error>
+</mat-form-field>
+
+<button mat-raised-button (click)="onAddContinent()">Create New Continent</button>
+
+</form>
+</div>
